@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ae59d0b8-c4cc-4587-bc30-9e6f10f6c4e0" name="Default Changelist" comment="" />
+    <list default="true" id="ae59d0b8-c4cc-4587-bc30-9e6f10f6c4e0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +29,24 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitRewordedCommitMessages">
+    <option name="commitMessagesMapping">
+      <RewordedCommitMessageMapping>
+        <option name="originalMessage" value="update readme" />
+        <option name="rewordedMessage" value="update readme" />
+      </RewordedCommitMessageMapping>
+    </option>
+    <option name="currentCommit" value="1" />
+    <option name="onto" value="b0d5bbe8f2998036320609d4055ae8f56414ac13" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1vNdkcH51UuHdY9W9zPoJgVUAmJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -39,6 +61,11 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunManager" selected="JUnit.RestDocsEndpointTest">
     <configuration name="RestDocsEndpointTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">

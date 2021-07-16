@@ -6,9 +6,9 @@ v{project-version}
 == INTRODUCTION
 This service is application Demo Simultan Documentation
 
-== Location Controller V2
+== Documentation Endpoint
 
-=== Get Location By Regional ID
+=== Get Documentation
 
 `GET /documentation`
 

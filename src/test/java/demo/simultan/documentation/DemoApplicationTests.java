@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
 import org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration;
 import org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration;
@@ -36,12 +37,20 @@ import static org.springframework.restdocs.webtestclient.WebTestClientRestDocume
 import static org.springframework.restdocs.webtestclient.WebTestClientRestDocumentation.documentationConfiguration;
 
 @SpringBootTest(classes = TestingConfiguration.class,
-		webEnvironment = RANDOM_PORT)
+		webEnvironment = RANDOM_PORT, properties = {
+		"demo.simultan.test.rest.document.scheme=https",
+		"demo.simultan.test.rest.document.host=simultan.com"
+})
 @AutoConfigureWebTestClient
 @ExtendWith(RestDocumentationExtension.class)
 @ImportAutoConfiguration({SpringDataWebAutoConfiguration.class, JacksonAutoConfiguration.class})
 class DemoApplicationTests {
 
+	@Value("${demo.simultan.test.rest.document.scheme}")
+	private String scheme;
+
+	@Value("${demo.simultan.test.rest.document.host}")
+	private String host;
 
 	private static final ParameterizedTypeReference<BaseResponse<Document>> RESPONSE_REFERENCE =
 			new ParameterizedTypeReference<BaseResponse<Document>>() {};
@@ -61,8 +70,8 @@ class DemoApplicationTests {
                             .withRequestDefaults(
                                     prettyPrint(),
                                     modifyUris()
-                                            .scheme("https")
-                                            .host("simultan.com").removePort())
+                                            .scheme(scheme)
+                                            .host(host).removePort())
                             .withResponseDefaults(
                                     prettyPrint()
                             )
