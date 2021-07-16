@@ -1,0 +1,8 @@
+[source,http,options="nowrap"]
+----
+GET /documentation HTTP/1.1
+Accept: application/json
+Accept: application/json;charset=UTF-8
+Host: simultan.com
+
+----

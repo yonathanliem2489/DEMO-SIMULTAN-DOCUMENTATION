@@ -1,0 +1,7 @@
+/Users/yonathan/Documents/myProject/DEMO-SIMULTAN-DOCUMENTATION/src/main/java/demo/simultan/documentation/DemoApplication.java
+/Users/yonathan/Documents/myProject/DEMO-SIMULTAN-DOCUMENTATION/src/main/java/demo/simultan/documentation/service/DocumentService.java
+/Users/yonathan/Documents/myProject/DEMO-SIMULTAN-DOCUMENTATION/src/main/java/demo/simultan/documentation/model/BaseResponse.java
+/Users/yonathan/Documents/myProject/DEMO-SIMULTAN-DOCUMENTATION/src/main/java/demo/simultan/documentation/errors/ContractViolationException.java
+/Users/yonathan/Documents/myProject/DEMO-SIMULTAN-DOCUMENTATION/src/main/java/demo/simultan/documentation/errors/BusinessLogicException.java
+/Users/yonathan/Documents/myProject/DEMO-SIMULTAN-DOCUMENTATION/src/main/java/demo/simultan/documentation/RestConfiguration.java
+/Users/yonathan/Documents/myProject/DEMO-SIMULTAN-DOCUMENTATION/src/main/java/demo/simultan/documentation/model/Document.java

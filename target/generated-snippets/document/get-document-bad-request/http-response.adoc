@@ -1,0 +1,13 @@
+[source,http,options="nowrap"]
+----
+HTTP/1.1 400 Bad Request
+Content-Type: application/json
+Content-Length: 93
+
+{
+  "code" : "BAD_REQUEST",
+  "message" : "Bad request",
+  "errors" : null,
+  "data" : null
+}
+----

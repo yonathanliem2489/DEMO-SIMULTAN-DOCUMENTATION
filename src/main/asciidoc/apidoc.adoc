@@ -1,0 +1,87 @@
+= Demo Simultan Documentation
+v{project-version}
+:toc: left
+:toclevels: 3
+
+== INTRODUCTION
+This service is application Demo Simultan Documentation
+
+== Location Controller V2
+
+=== Get Location By Regional ID
+
+`GET /documentation`
+
+[.lead]
+* Success, Get Document
+
+
+.Curl Request
+
+include::{snippets}/document/get-document-success/curl-request.adoc[]
+
+
+.Request
+
+include::{snippets}/document/get-document-success/http-request.adoc[]
+
+
+.Response
+
+include::{snippets}/document/get-document-success/http-response.adoc[]
+
+
+[.lead]
+* Failed, Get Document Caused System Error
+
+
+.Curl Request
+
+include::{snippets}/document/get-document-system-error/curl-request.adoc[]
+
+
+.Request
+
+include::{snippets}/document/get-document-system-error/http-request.adoc[]
+
+
+.Response
+
+include::{snippets}/document/get-document-system-error/http-response.adoc[]
+
+
+[.lead]
+* Failed, Get Document Caused Bad Request
+
+
+.Curl Request
+
+include::{snippets}/document/get-document-bad-request/curl-request.adoc[]
+
+
+.Request
+
+include::{snippets}/document/get-document-bad-request/http-request.adoc[]
+
+
+.Response
+
+include::{snippets}/document/get-document-bad-request/http-response.adoc[]
+
+
+.Rest Documentation - Error Mapping
+|===
+|HTTP Status Code |Error Message |Description
+
+|400
+|BAD_REQUEST
+|Request not valid
+
+|404
+|NOT_FOUND
+|Path or header not valid
+
+|500
+|SYSTEM_ERROR
+|Error processing
+|===

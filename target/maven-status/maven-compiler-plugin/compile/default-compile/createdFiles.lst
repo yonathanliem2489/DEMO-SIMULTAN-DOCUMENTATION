@@ -1,0 +1,8 @@
+demo/simultan/documentation/model/BaseResponse.class
+demo/simultan/documentation/model/Document.class
+demo/simultan/documentation/errors/BusinessLogicException.class
+demo/simultan/documentation/service/DocumentService.class
+demo/simultan/documentation/model/Document$Builder.class
+demo/simultan/documentation/DemoApplication.class
+demo/simultan/documentation/errors/ContractViolationException.class
+demo/simultan/documentation/RestConfiguration.class

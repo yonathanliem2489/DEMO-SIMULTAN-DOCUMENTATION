@@ -1,0 +1,9 @@
+[source,options="nowrap"]
+----
+{
+  "code" : "BAD_REQUEST",
+  "message" : "Bad request",
+  "errors" : null,
+  "data" : null
+}
+----
