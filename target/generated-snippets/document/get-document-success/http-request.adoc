@@ -1,8 +1,15 @@
 [source,http,options="nowrap"]
 ----
-GET /documentation HTTP/1.1
+POST /documentation HTTP/1.1
 Accept: application/json
 Accept: application/json;charset=UTF-8
+Content-Type: application/json
+Content-Length: 90
 Host: simultan.com
 
+{
+  "id" : "b5ddea92-6e7a-4742-819c-0778205da666",
+  "number" : 1,
+  "name" : "simultan"
+}
 ----

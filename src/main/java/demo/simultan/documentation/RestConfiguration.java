@@ -3,6 +3,7 @@ package demo.simultan.documentation;
 import demo.simultan.documentation.errors.BusinessLogicException;
 import demo.simultan.documentation.errors.ContractViolationException;
 import demo.simultan.documentation.model.BaseResponse;
+import demo.simultan.documentation.model.Document;
 import demo.simultan.documentation.service.DocumentService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,7 +20,7 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 public class RestConfiguration {
 
     @Bean
-    RouterFunction<ServerResponse> documentEndpoint(DocumentService documentService) {
+    RouterFunction<ServerResponse> getDocumentEndpoint(DocumentService documentService) {
         HandlerFunction<ServerResponse> handlerFunction = serverRequest ->
                 documentService.get()
                         .flatMap(document -> ServerResponse.ok()
@@ -31,6 +32,24 @@ public class RestConfiguration {
 
         return route()
                 .route(RequestPredicates.method(HttpMethod.GET)
+                        .and(path("documentation")), handlerFunction)
+                .build();
+    }
+
+    @Bean
+    RouterFunction<ServerResponse> createDocumentEndpoint(DocumentService documentService) {
+        HandlerFunction<ServerResponse> handlerFunction = serverRequest ->
+                serverRequest.bodyToMono(Document.class)
+                .flatMap(document -> documentService.create(document)
+                        .flatMap(result -> ServerResponse.ok()
+                                .bodyValue(BaseResponse.success(result)))
+                        .onErrorResume(BusinessLogicException.class, throwable -> ServerResponse.status(500)
+                                .bodyValue(BaseResponse.error(throwable.getCode(), throwable.getMessage(), null)))
+                        .onErrorResume(ContractViolationException.class, throwable -> ServerResponse.status(400)
+                                .bodyValue(BaseResponse.error(throwable.getCode(), throwable.getMessage(), null))));
+
+        return route()
+                .route(RequestPredicates.method(HttpMethod.POST)
                         .and(path("documentation")), handlerFunction)
                 .build();
     }

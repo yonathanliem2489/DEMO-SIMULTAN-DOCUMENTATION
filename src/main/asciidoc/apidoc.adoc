@@ -8,6 +8,40 @@ This service is application Demo Simultan Documentation
 
 == Documentation Endpoint
 
+=== Create Documentation
+
+`POST /documentation`
+
+[.lead]
+* Success, Get Document
+
+
+.Curl Request
+
+include::{snippets}/document/create-document-success/curl-request.adoc[]
+
+
+.Request
+
+include::{snippets}/document/create-document-success/http-request.adoc[]
+
+
+.Response
+
+include::{snippets}/document/create-document-success/http-response.adoc[]
+
+Field of table
+
+.Request
+
+include::{snippets}/document/create-document-success/request-fields.adoc[]
+
+.Response
+
+include::{snippets}/document/create-document-success/response-fields.adoc[]
+
+
+
 === Get Documentation
 
 `GET /documentation`

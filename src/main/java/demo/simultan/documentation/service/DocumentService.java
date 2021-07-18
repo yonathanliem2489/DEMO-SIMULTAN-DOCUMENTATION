@@ -10,4 +10,8 @@ public class DocumentService {
     public Mono<Document> get() {
         return Mono.empty();
     }
+
+    public Mono<Document> create(Document document) {
+        return Mono.just(document);
+    }
 }

@@ -1,6 +1,12 @@
 [source,bash]
 ----
-$ curl 'https://simultan.com/documentation' -i -X GET \
+$ curl 'https://simultan.com/documentation' -i -X POST \
     -H 'Accept: application/json' \
-    -H 'Accept: application/json;charset=UTF-8'
+    -H 'Accept: application/json;charset=UTF-8' \
+    -H 'Content-Type: application/json' \
+    -d '{
+  "id" : "b5ddea92-6e7a-4742-819c-0778205da666",
+  "number" : 1,
+  "name" : "simultan"
+}'
 ----

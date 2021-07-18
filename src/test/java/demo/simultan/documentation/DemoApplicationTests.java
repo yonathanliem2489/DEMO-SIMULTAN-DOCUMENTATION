@@ -24,12 +24,20 @@ import org.springframework.http.MediaType;
 import org.springframework.restdocs.RestDocumentationContextProvider;
 import org.springframework.restdocs.RestDocumentationExtension;
 import org.springframework.restdocs.operation.preprocess.Preprocessors;
+import org.springframework.restdocs.payload.FieldDescriptor;
+import org.springframework.restdocs.payload.PayloadDocumentation;
+import org.springframework.restdocs.payload.RequestFieldsSnippet;
+import org.springframework.restdocs.payload.ResponseFieldsSnippet;
 import org.springframework.test.web.reactive.server.WebTestClient;
 import reactor.core.publisher.Mono;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.ArgumentMatchers.any;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.RANDOM_PORT;
 import static org.springframework.restdocs.operation.preprocess.Preprocessors.modifyUris;
 import static org.springframework.restdocs.operation.preprocess.Preprocessors.prettyPrint;
@@ -45,6 +53,15 @@ import static org.springframework.restdocs.webtestclient.WebTestClientRestDocume
 @ExtendWith(RestDocumentationExtension.class)
 @ImportAutoConfiguration({SpringDataWebAutoConfiguration.class, JacksonAutoConfiguration.class})
 class DemoApplicationTests {
+
+	private final static String INTEGER = "Integer";
+	private final static String OBJECT = "Object";
+	private final static String STRING = "String";
+	private final static String DATE = "Date";
+	private final static String TIME = "Time";
+	private final static String ENUMS = "Enums";
+	private final static String BIG_DECIMAL = "BigDecimal";
+	private final static String BOOLEAN = "Boolean";
 
 	@Value("${demo.simultan.test.rest.document.scheme}")
 	private String scheme;
@@ -80,6 +97,38 @@ class DemoApplicationTests {
 	}
 
 	@Test
+	void whenCreateDocs_thenShouldSuccess() {
+		Document document = Document.builder()
+				.id(UUID.randomUUID().toString())
+				.name("simultan")
+				.number(1)
+				.build();
+
+		Mockito.when(documentService.create(any()))
+				.thenReturn(Mono.just(document));
+
+		webTestClient.post()
+				.uri(uriBuilder -> uriBuilder
+						.path("/documentation")
+						.build())
+				.header(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_JSON_UTF8_VALUE)
+				.bodyValue(document)
+				.exchange()
+				.expectStatus().isOk()
+				.expectBody(RESPONSE_REFERENCE)
+				.value(result -> {
+					assertThat(document).isEqualTo(result.getData());
+				})
+				.consumeWith(document("document/create-document-success",
+						Preprocessors.preprocessRequest(prettyPrint()),
+						Preprocessors.preprocessResponse(prettyPrint()),
+						requestFields(),
+						responseFields()
+				));
+
+	}
+
+	@Test
 	void whenGetDocs_thenShouldSuccess() {
 		Document document = Document.builder()
 				.id(UUID.randomUUID().toString())
@@ -107,7 +156,6 @@ class DemoApplicationTests {
                 ));
 
 	}
-
 
     @Test
     void whenGetDocs_thenShouldSystemError() {
@@ -156,5 +204,39 @@ class DemoApplicationTests {
                 ));
 
     }
+
+	private RequestFieldsSnippet requestFields() {
+		return PayloadDocumentation.requestFields()
+				.and(PayloadDocumentation.fieldWithPath("id").description("id request of body").type(STRING))
+				.and(PayloadDocumentation.fieldWithPath("number").description("number request of body").type(INTEGER))
+				.and(PayloadDocumentation.fieldWithPath("name").description("name request of body").type(STRING));
+	}
+
+	private ResponseFieldsSnippet responseFields() {
+		String data = "data";
+		return PayloadDocumentation.responseFields(
+				PayloadDocumentation.fieldWithPath("code").description("Error code description")
+						.type(STRING),
+				PayloadDocumentation.fieldWithPath("message").description("Error message description")
+						.type(STRING),
+				PayloadDocumentation.fieldWithPath("errors").description("Details error message")
+						.type(STRING))
+				.and(PayloadDocumentation.fieldWithPath(data).description("Payload response")
+						.type(OBJECT).optional())
+				.and(payloadResponse(data));
+	}
+
+	private static List<FieldDescriptor> payloadResponse(String data) {
+		return new ArrayList<>(PayloadDocumentation.applyPathPrefix(data,
+				Arrays.asList(
+						PayloadDocumentation.fieldWithPath(".id").description("ID of document")
+								.type(STRING),
+						PayloadDocumentation.fieldWithPath(".number").description("Number of document")
+								.type(INTEGER),
+						PayloadDocumentation.fieldWithPath(".name").description("Name of document").type(STRING)
+				)
+		));
+	}
+
 }
 

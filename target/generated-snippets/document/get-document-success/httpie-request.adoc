@@ -1,6 +1,11 @@
 [source,bash]
 ----
-$ http GET 'https://simultan.com/documentation' \
+$ echo '{
+  "id" : "b5ddea92-6e7a-4742-819c-0778205da666",
+  "number" : 1,
+  "name" : "simultan"
+}' | http POST 'https://simultan.com/documentation' \
     'Accept:application/json' \
-    'Accept:application/json;charset=UTF-8'
+    'Accept:application/json;charset=UTF-8' \
+    'Content-Type:application/json'
 ----
