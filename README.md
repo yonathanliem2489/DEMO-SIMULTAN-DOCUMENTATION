@@ -9,3 +9,11 @@ Feature :
 Requirement :
 1. Spring boot 2.4.x
 2. Dependency Asciidoc
+
+
+How to get html or pdf api doc
+
+Command
+```
+mvn clean install
+```
