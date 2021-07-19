@@ -23,7 +23,7 @@ public class Document implements Serializable {
 	private String name;
 
 	@JsonCreator
-	@lombok.Builder(builderClassName = "Builder")
+	@lombok.Builder(builderClassName = "Builder", toBuilder = true)
 	Document(@JsonProperty("id") String id,
 			 @JsonProperty("number") Integer number,
 			 @JsonProperty("name") String name) {

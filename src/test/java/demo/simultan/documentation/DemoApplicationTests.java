@@ -131,13 +131,15 @@ class DemoApplicationTests {
 	@Test
 	void whenGetDocs_thenShouldSuccess() {
 		Document document = Document.builder()
-				.id(UUID.randomUUID().toString())
 				.name("simultan")
 				.number(1)
 				.build();
 
+		Document documentResult = document.toBuilder()
+				.id(UUID.randomUUID().toString())
+				.build();
 		Mockito.when(documentService.get())
-				.thenReturn(Mono.just(document));
+				.thenReturn(Mono.just(documentResult));
 
 		webTestClient.get()
 				.uri(uriBuilder -> uriBuilder
@@ -148,7 +150,7 @@ class DemoApplicationTests {
 				.expectStatus().isOk()
 				.expectBody(RESPONSE_REFERENCE)
 				.value(result -> {
-					assertThat(document).isEqualTo(result.getData());
+					assertThat(documentResult).isEqualTo(result.getData());
 				})
                 .consumeWith(document("document/get-document-success",
                         Preprocessors.preprocessRequest(prettyPrint()),
