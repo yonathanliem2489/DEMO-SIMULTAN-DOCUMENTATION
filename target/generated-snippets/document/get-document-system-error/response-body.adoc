@@ -1,9 +1,0 @@
-[source,options="nowrap"]
-----
-{
-  "code" : "SYSTEM_ERROR",
-  "message" : "system error",
-  "errors" : null,
-  "data" : null
-}
-----

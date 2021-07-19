@@ -1,6 +1,0 @@
-[source,bash]
-----
-$ curl 'https://simultan.com/documentation' -i -X GET \
-    -H 'Accept: application/json' \
-    -H 'Accept: application/json;charset=UTF-8'
-----

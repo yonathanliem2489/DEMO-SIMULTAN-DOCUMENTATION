@@ -5,18 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae59d0b8-c4cc-4587-bc30-9e6f10f6c4e0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service.iml" beforeDir="false" afterPath="$PROJECT_DIR$/service.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/demo/simultan/documentation/RestConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/simultan/documentation/RestConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/demo/simultan/documentation/service/DocumentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/simultan/documentation/service/DocumentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/demo/simultan/documentation/DemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/demo/simultan/documentation/DemoApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-snippets/document/get-document-success/curl-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/document/get-document-success/curl-request.adoc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-snippets/document/get-document-success/http-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/document/get-document-success/http-request.adoc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-snippets/document/get-document-success/http-response.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/document/get-document-success/http-response.adoc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-snippets/document/get-document-success/httpie-request.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/document/get-document-success/httpie-request.adoc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-snippets/document/get-document-success/request-body.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/document/get-document-success/request-body.adoc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/generated-snippets/document/get-document-success/response-body.adoc" beforeDir="false" afterPath="$PROJECT_DIR$/target/generated-snippets/document/get-document-success/response-body.adoc" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,6 +205,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="edit readme" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

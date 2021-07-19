@@ -1,8 +1,0 @@
-[source,options="nowrap"]
-----
-{
-  "id" : "b5ddea92-6e7a-4742-819c-0778205da666",
-  "number" : 1,
-  "name" : "simultan"
-}
-----
