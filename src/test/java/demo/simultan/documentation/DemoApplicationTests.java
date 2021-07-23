@@ -12,9 +12,18 @@ import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
+import org.springframework.boot.autoconfigure.context.LifecycleAutoConfiguration;
 import org.springframework.boot.autoconfigure.data.web.SpringDataWebAutoConfiguration;
+import org.springframework.boot.autoconfigure.http.codec.CodecsAutoConfiguration;
 import org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration;
+import org.springframework.boot.autoconfigure.web.reactive.HttpHandlerAutoConfiguration;
+import org.springframework.boot.autoconfigure.web.reactive.ReactiveWebServerFactoryAutoConfiguration;
+import org.springframework.boot.autoconfigure.web.reactive.WebFluxAutoConfiguration;
+import org.springframework.boot.autoconfigure.web.reactive.error.ErrorWebFluxAutoConfiguration;
+import org.springframework.boot.autoconfigure.web.reactive.function.client.ClientHttpConnectorAutoConfiguration;
+import org.springframework.boot.autoconfigure.web.reactive.function.client.WebClientAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient;
+import org.springframework.boot.test.autoconfigure.web.reactive.WebTestClientAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.core.ParameterizedTypeReference;
@@ -51,7 +60,11 @@ import static org.springframework.restdocs.webtestclient.WebTestClientRestDocume
 })
 @AutoConfigureWebTestClient
 @ExtendWith(RestDocumentationExtension.class)
-@ImportAutoConfiguration({SpringDataWebAutoConfiguration.class, JacksonAutoConfiguration.class})
+@ImportAutoConfiguration({SpringDataWebAutoConfiguration.class, JacksonAutoConfiguration.class,
+		ReactiveWebServerFactoryAutoConfiguration.class,
+		HttpHandlerAutoConfiguration.class,
+		WebFluxAutoConfiguration.class,
+		RestConfiguration.class})
 class DemoApplicationTests {
 
 	private final static String INTEGER = "Integer";

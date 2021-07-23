@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ae59d0b8-c4cc-4587-bc30-9e6f10f6c4e0" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/demo/simultan/documentation/CodecsCharsetAutoConfiguration.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/demo/simultan/documentation/model/Document.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/demo/simultan/documentation/model/Document.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/demo/simultan/documentation/DemoApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/demo/simultan/documentation/DemoApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/demo/simultan/documentation/TestingConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/demo/simultan/documentation/TestingConfiguration.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +71,7 @@
       <recent name="demo.simultan.documentation" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DemoApplicationTests.whenCreateDocs_thenShouldSuccess">
+  <component name="RunManager" selected="JUnit.DemoApplicationTests">
     <configuration name="DemoApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="service" />
       <extension name="coverage">
@@ -150,8 +151,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DemoApplicationTests.whenCreateDocs_thenShouldSuccess" />
         <item itemvalue="JUnit.DemoApplicationTests" />
+        <item itemvalue="JUnit.DemoApplicationTests.whenCreateDocs_thenShouldSuccess" />
         <item itemvalue="JUnit.Tests.test" />
         <item itemvalue="JUnit.Tests" />
         <item itemvalue="JUnit.RestDocsEndpointTest" />
@@ -221,7 +222,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/demo/simultan/documentation/DemoApplicationTests.java</url>
-          <line>119</line>
+          <line>132</line>
           <option name="timeStamp" value="18" />
         </line-breakpoint>
       </breakpoints>

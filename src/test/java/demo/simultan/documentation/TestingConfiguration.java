@@ -1,7 +1,7 @@
 package demo.simultan.documentation;
 
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.SpringBootConfiguration;
 
-@SpringBootApplication
+@SpringBootConfiguration
 public class TestingConfiguration {
 }
